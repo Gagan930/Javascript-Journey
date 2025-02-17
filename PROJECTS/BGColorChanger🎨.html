@@ -1,0 +1,36 @@
+<!-- 🛠️ Small Project: Background Color Changer🎨
+💡 Task:
+1️⃣ Create a button.
+2️⃣ When clicked, the background color of the page should change randomly.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button id="colorbutton">Color change</button> 
+
+        <script>
+            function getRandomColor(){
+                let letters = "0123456789ABCDEF";
+                let color = "#";
+
+                for(let i=0;i<6;i++){ 
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
+
+            document.getElementById("colorbutton").addEventListener("click",function(){
+                document.body.style.backgroundColor= getRandomColor();
+            });
+            document.getElementById("colorbutton").addEventListener("mouseover",function(){
+                this.style.backgroundColor = getRandomColor();
+            });
+
+        </script>
+</body>
+</html>

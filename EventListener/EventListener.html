@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="clicker">Click me!</button>
+    <p id="output"></p>
+
+    <script>
+        let button = document.getElementById("clicker");
+
+        button.addEventListener("click",function(){
+            document.getElementById("output").textContent = "Button is Clicked";
+        });
+    </script>
+</body>
+</html>

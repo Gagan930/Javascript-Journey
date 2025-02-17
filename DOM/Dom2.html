@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding and removing elements</title>
+</head>
+<body>
+    <script>
+        let para = document.createElement("p");
+        para.textContent = "This is a para added using javscript";
+
+        document.body.append(para);
+
+        let removing_para = document.querySelector("p");
+        removing_para.remove();
+    </script>
+</body>
+</html>
