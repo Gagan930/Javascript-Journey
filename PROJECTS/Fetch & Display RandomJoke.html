@@ -1,0 +1,40 @@
+<!-- 🛠️ Small Project: Fetch & Display Random Joke 😂
+💡 Task:
+1️⃣ Fetch a random joke from an API.
+2️⃣ Display it when the user clicks a button. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch & Display User Data</title>
+</head>
+<body>
+
+    <button id="jokebutton">Get Joke</button>
+    <p id="gettingjoke"></p>
+
+
+    <script>
+
+        document.getElementById("jokebutton").addEventListener("click",function(){
+            
+            
+            
+            fetch("https://official-joke-api.appspot.com/random_joke")
+            .then(response=>response.json())
+            .then(data=>{
+                console.log(data);
+                
+                document.getElementById("gettingjoke").textContent = `${data.setup} - ${data.punchline}`
+            })
+            .catch(error=>console.log(error));
+        
+    });
+
+        
+    </script>
+</body>
+</html>
