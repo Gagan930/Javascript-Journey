@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval and  Set timeout</title>
+</head>
+<body>
+    <!-- Set interval means repeating and executing again and again over a certain period -->
+
+    <script>
+        let buttonvisible = false;
+        setInterval(()=>{
+            if(buttonvisible){
+                document.body.removeChild(document.querySelector("button"));
+                buttonvisible = false;
+            }else{
+                buttonappear();
+                buttonvisible = true;
+            }
+        },1000);
+        
+        function buttonappear(){
+            let button = document.createElement("button");
+            button.textContent="Hi";
+            document.body.append(button);
+        }
+
+
+    </script>
+</body>
+</html>

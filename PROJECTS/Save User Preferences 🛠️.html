@@ -1,0 +1,46 @@
+<!-- 🛠️
+💡 Task:
+1️⃣ Create an input field where users enter their name.
+2️⃣ Store the name in Local Storage when they click "Save".
+3️⃣ When the page loads, display the saved name. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save user preferences (Local Storage)</title>
+</head>
+<body>
+    <input type="text" id="inputfield" placeholder="Enter your name...">
+    <button onclick=savedName()>Save</button>
+    <button onclick="deleteName()">Delete username</button>
+    <p id="greeting"></p>
+    <script>
+
+        function deleteName(){
+            localStorage.removeItem("username");
+            document.getElementById("greeting").textContent = "Deleted username";
+            
+        }
+        function displaygreeting(){
+            let savedname = localStorage.getItem("username");
+            if(savedname){
+                document.getElementById("greeting").textContent = `Hello ${savedname}`;
+            }
+        }
+
+        function savedName(){
+            let name = document.getElementById("inputfield").value;
+            localStorage.setItem("username",name);
+            displaygreeting();
+        }
+
+        displaygreeting();    // show name when page loads;
+
+        
+    </script>
+</body>
+</html>
