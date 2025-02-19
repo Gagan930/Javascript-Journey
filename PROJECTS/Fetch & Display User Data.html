@@ -1,0 +1,41 @@
+<!-- 🛠️ Small Project: Fetch & Display User Data 📜
+💡 Task:
+1️⃣ Fetch user data from an API.
+2️⃣ Display their name and email on the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="fetchdata">Fetch data</button>
+    <p id="display para"></p>
+    <script>
+
+        document.getElementById("fetchdata").addEventListener("click",async function retrieve(){
+            try{
+                // Generate a random user ID between 1 and 10
+                let randomNumber = Math.floor((Math.random() * 10)+1);
+                
+                let response = await fetch(`https://jsonplaceholder.typicode.com/users/${randomNumber}`);
+                let data = await response.json();
+
+            
+                    document.getElementById("display para").textContent = `${data.id} - ${data.username} - ${data.email}`;
+    
+            }
+
+            catch(error){
+                console.log("Error : ",error);
+            }
+    })
+
+
+
+    </script>
+</body>
+</html>

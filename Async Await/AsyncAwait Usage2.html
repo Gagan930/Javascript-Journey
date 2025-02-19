@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await Usage 2</title>
+</head>
+<body>
+    <script>
+        function delay(){
+            return new Promise(resolve=> 
+
+                setTimeout(()=>{
+                    resolve("Done");
+                },3000)
+
+            );
+
+        }
+
+        async function run(){
+            console.log("Start");
+
+            let result = await delay();
+
+            console.log("End");
+        }
+
+        run();
+    </script>
+</body>
+</html>

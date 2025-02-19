@@ -21,8 +21,6 @@
 
         document.getElementById("jokebutton").addEventListener("click",function(){
             
-            
-            
             fetch("https://official-joke-api.appspot.com/random_joke")
             .then(response=>response.json())
             .then(data=>{
