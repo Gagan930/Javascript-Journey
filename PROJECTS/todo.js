@@ -3,9 +3,6 @@
 // 1️⃣ Add tasks to a list when clicking a button.
 // 2️⃣ Remove a task when clicking on it.
 
-// 🎯 Next Steps
-// 1️⃣ Modify the To-Do List to store tasks in localStorage, so they remain after page refresh.
-// 2️⃣ Add a "Clear All" button to remove all tasks at once.
 
 
 document.addEventListener("DOMContentLoaded",function(){
